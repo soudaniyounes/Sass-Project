@@ -1,0 +1,25 @@
+%navbar-layout{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.navbar{
+    @extend %navbar-layout;
+    padding:20px;
+    box-shadow: $base-box-shadow;
+    .container{
+        @extend %navbar-layout;
+    }
+}
+.site-title{
+    font-size:$font-size-lg;
+}
+
+@each $key,$value in $colors {
+    .navbar-#{$key}{
+        @extend .navbar;
+        background-color:$value;
+    }
+}

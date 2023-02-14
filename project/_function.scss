@@ -1,0 +1,5 @@
+@function btn-comp($color){
+    $complement:complement($color);
+    $btn-color:lighten($complement,30%);
+    @return $btn-color;
+}

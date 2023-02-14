@@ -1,0 +1,21 @@
+@mixin badge($back-color:$secondary){
+font : {
+    size:$font-size-sm;
+    weight:bold;    
+}
+padding : {
+    left:$base-padding;
+    right:$base-padding;
+    bottom:($base-padding / 2);   
+    top:($base-padding / 2);
+}
+background-color: $back-color;
+color:#fff;
+border-radius: ($base-border-radius / 3);
+}
+
+@each $k,$v in $colors {
+    .badge-#{$k}{
+        @include badge($v);
+    }
+}
